@@ -21,11 +21,6 @@ This project analyzes web server logs using **Apache Hive**. The goal is to extr
 | user_agent  | STRING   | Browser/User Agent |
 
 
-192.168.1.1,2024-02-01 10:15:00,/home,200,Mozilla/5.0
-192.168.1.2,2024-02-01 10:16:00,/products,200,Chrome/90.0
-192.168.1.3,2024-02-01 10:17:00,/checkout,404,Safari/13.1
-192.168.1.10,2024-02-01 10:18:00,/home,500,Mozilla/5.0
-192.168.1.15,2024-02-01 10:19:00,/products,404,Chrome/90.0
 
 🚀 Implementation Steps
 1️⃣ Setup Apache Hive with Docker
@@ -38,20 +33,26 @@ docker exec -it hive-server /bin/bash
 hive
 3️⃣ Create Database and Table:
 
+## 💾 Database and Table Creation  
+```sql
+## 💾 Database and Table Creation  
+```sql
 CREATE DATABASE web_log_analysis;
 USE web_log_analysis;
 
 CREATE EXTERNAL TABLE web_logs (
     ip STRING,
-    log_timestamp STRING,  -- Renamed "timestamp" (reserved keyword)
+    log_timestamp STRING, -- Renamed "timestamp" (reserved keyword)
     url STRING,
     status INT,
     user_agent STRING
-)
+) 
 ROW FORMAT DELIMITED 
 FIELDS TERMINATED BY ',' 
 STORED AS TEXTFILE 
 LOCATION '/user/hive/web_logs/';
+
+
 4️⃣ Upload Data to HDFS
 First, copy the CSV file into the Namenode container:
 
