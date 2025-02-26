@@ -1,4 +1,5 @@
 # Web-Server-Log-Analysis
+<<<<<<< HEAD
 ## 🚀 Project Overview  
 This project analyzes web server logs using **Apache Hive**. The goal is to extract insights such as:
 ### 📊 Key Insights Extracted  
@@ -126,3 +127,15 @@ makefile
 
 
 
+=======
+📌 Project Overview
+This project analyzes web server logs using Apache Hive. The goal is to extract insights such as:
+
+Total Web Requests
+Status Code Analysis (200, 404, 500)
+Top 3 Most Visited Pages
+Traffic Source Analysis (User Agents)
+Detect Suspicious Activity (IPs with failed requests)
+Traffic Trends Over Time
+Partitioning by Status Code for Optimization
+>>>>>>> 1cf554e (Manisha)
