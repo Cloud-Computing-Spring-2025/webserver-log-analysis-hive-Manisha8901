@@ -1,24 +1,25 @@
 # Web-Server-Log-Analysis
-📌 Project Overview
-This project analyzes web server logs using Apache Hive. The goal is to extract insights such as:
+## 🚀 Project Overview  
+This project analyzes web server logs using **Apache Hive**. The goal is to extract insights such as:
+### 📊 Key Insights Extracted  
+- **Total Web Requests**  
+- **Status Code Analysis** (200, 404, 500)  
+- **Top 3 Most Visited Pages**  
+- **Traffic Source Analysis** (User Agents)  
+- **Detect Suspicious Activity** (IPs with failed requests)  
+- **Traffic Trends Over Time**  
+- **Partitioning by Status Code for Optimization**  
 
-Total Web Requests
-Status Code Analysis (200, 404, 500)
-Top 3 Most Visited Pages
-Traffic Source Analysis (User Agents)
-Detect Suspicious Activity (IPs with failed requests)
-Traffic Trends Over Time
-Partitioning by Status Code for Optimization
 
-Dataset Format (CSV)
-The web server log file contains the following fields:
+## 🗂️ Dataset Format (CSV)
+| Field Name  | Data Type | Description |
+|-------------|----------|-------------|
+| ip          | STRING   | Client IP Address |
+| timestamp   | STRING   | Request Time (YYYY-MM-DD HH:MM:SS) |
+| url         | STRING   | Requested URL |
+| status      | INT      | HTTP Status Code (200, 404, 500, etc.) |
+| user_agent  | STRING   | Browser/User Agent |
 
-Field Name	Data Type	Description
-ip	STRING	Client IP Address
-timestamp	STRING	Request Time (YYYY-MM-DD HH:MM:SS)
-url	STRING	Requested URL
-status	INT	HTTP Status Code (200, 404, 500, etc.)
-user_agent	STRING	Browser/User Agent
 
 192.168.1.1,2024-02-01 10:15:00,/home,200,Mozilla/5.0
 192.168.1.2,2024-02-01 10:16:00,/products,200,Chrome/90.0
